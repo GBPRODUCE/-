@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>我的個人網站</title>
+    <style>
+        /* 这里是 CSS 代码，用来定义网页的样式 */
+        body {
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            margin: 0;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .navbar a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+        .profile img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .profile h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        .profile h2 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .profile p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .resume {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 20px;
+        }
+        .resume h3 {
+            font-size: 20px;
+            margin: 0;
+        }
+        .resume ul {
+            list-style: none;
+            padding: 0;
+        }
+        .resume li {
+            margin: 10px 0;
+        }
+        .resume .item {
+            display: flex;
+            align-items: center;
+        }
+        .resume .item span {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .contact .card {
+            width: 300px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .contact .card h4 {
+            font-size: 18px;
+            margin: 0;
+        }
+        .contact .card p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .contact .card a {
+            font-size: 16px;
+            color: blue;
+            text-decoration: none;
+        }
+        .contact .card a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- 这里是 HTML 代码，用来定义网页的结构 -->
+    <div class="navbar">
+        <a href="#home" class="active">吳佳霖</a>
+        <a href="#contact">聯絡管道</a>
+    </div>
+    <div class="container">
+        <div id="home" class="profile">
+            <div class="info">
+                <h1>吳佳霖</h1>
+                <h2>聽力規劃師/童裝賣場/農家</h2>
+                <p></p>
+            </div>
+        </div>
+
+        <div id="contact" class="contact">
+            <div class="card">
+                <h4>個人</h4>
+                <p>個人聯繫管道</p>
+                <a href="https://line.me/ti/p/zmb5wN8VjQ">LINE</a>
+                <a href="https://www.facebook.com/profile.php?id=100000542671836&locale=zh_TW">Facebook</a>
+                <a href="qaz11020408@gmail.com">Mail</a>
+            </div>
+            <div class="card">
+                <h4>Gawen Baby韓國童裝</h4>
+                <p>韓國童裝，現正熱賣中，提供預購、代購</p>
+                <a href="https://gawenbaby.easy.co">官方網站</a>
+                <a href="https://is.gd/PFF0Ok">Instagram</a>
+                <a href="https://is.gd/34e32g">Facebook</a>
+            </div>
+            <div class="card">
+                <h4>元健助聽器</h4>
+                <p>歡迎諮詢、預約、試聽</p>
+                <a href="https://lin.ee/oLfMFs8">LINE</a>
+                <a href="https://www.facebook.com/digibionicYLBG?locale=zh_TW">Facebook</a>
+            </div>
+        </div>
+    </div>
+    <!-- 这里是 Javascript 代码，用来定义网页的交互 -->
+    <script>
+        // 获取导航栏的所有链接元素
+        var navbarLinks = document.querySelectorAll(".navbar a");
+        // 遍历每个链接元素，为它们添加点击事件监听器
+        navbarLinks.forEach(function(link) {
+            link.addEventListener("click", function(event) {
+                // 阻止默认的跳转行为
+                event.preventDefault();
+                // 获取被点击的链接元素的 href 属性值
+                var href = link.getAttribute("href");
+                // 获取对应的页面元素
+                var page = document.querySelector(href);
+                // 将页面滚动到该元素的位置
+                page.scrollIntoView({behavior: "smooth"});
+                // 移除其他链接元素的 active 类名
+                navbarLinks.forEach(function(otherLink) {
+                    otherLink.classList.remove("active");
+                });
+                // 为被点击的链接元素添加 active 类名
+                link.classList.add("active");
+            });
+        });
+    </script>
+</body>
+</html>
