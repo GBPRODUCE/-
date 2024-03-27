@@ -56,55 +56,34 @@
             font-size: 18px;
             margin: 10px 0;
         }
-        .resume {
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-            gap: 20px;
-        }
-        .resume h3 {
-            font-size: 20px;
-            margin: 0;
-        }
-        .resume ul {
-            list-style: none;
-            padding: 0;
-        }
-        .resume li {
-            margin: 10px 0;
-        }
-        .resume .item {
-            display: flex;
-            align-items: center;
-        }
-        .resume .item span {
-            font-weight: bold;
-            margin-right: 10px;
-        }
         .contact {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
         }
-        .contact .card {
-            width: 300px;
+        .card {
+            width: 100%; /* 讓卡片佔滿容器的寬度 */
             border: 1px solid #ccc;
             padding: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-sizing: border-box; /* 考慮邊框和填充的寬度 */
         }
-        .contact .card h4 {
+        .contact h4 {
             font-size: 18px;
-            margin: 0;
+            margin: 0 0 10px 0; /* 添加底部間距 */
         }
-        .contact .card p {
+        .contact p {
             font-size: 16px;
-            margin: 10px 0;
+            margin: 0; /* 清除段落的頂部和底部間距 */
         }
-        .contact .card a {
+        .contact a {
             font-size: 16px;
             color: blue;
             text-decoration: none;
+            display: block; /* 讓連結填滿卡片的寬度 */
+            margin-top: 10px; /* 添加上部間距 */
         }
-        .contact .card a:hover {
+        .contact a:hover {
             text-decoration: underline;
         }
     </style>
@@ -113,7 +92,6 @@
     <!-- 这里是 HTML 代码，用来定义网页的结构 -->
     <div class="navbar">
         <a href="#home" class="active">吳佳霖</a>
-        <a href="#contact">聯絡管道</a>
     </div>
     <div class="container">
         <div id="home" class="profile">
@@ -124,7 +102,7 @@
             </div>
         </div>
 
-        <div id="contact" class="contact">
+        <div class="contact">
             <div class="card">
                 <h4>個人</h4>
                 <p>個人聯繫管道</p>
